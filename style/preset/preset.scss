@@ -1,0 +1,45 @@
+@import '../_minxin.scss';
+* {
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth;
+}
+
+body,
+html {
+	position: relative;
+	background: #2b5263;
+	background: -webkit-linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
+	background: linear-gradient(to bottom, #2c5364, #182c33, #0c1d24);
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	@include BigPhone {
+		font-size: 10px;
+	}
+	@include SmallPhone {
+		font-size: 6px;
+	}
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style: none;
+}
+li {
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+	color: #ccd6f6;
+	&:hover {
+		color: #62f9d6;
+		transition: all 1s;
+	}
+}

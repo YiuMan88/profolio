@@ -1,0 +1,17 @@
+@mixin Bigtablet {
+	@media screen and (min-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin BigPhone {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin SmallPhone {
+	@media screen and (max-width: 376px) {
+		@content;
+	}
+}

@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  position: relative;
+  background: #2b5263;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2c5364), color-stop(#182c33), to(#0c1d24));
+  background: linear-gradient(to bottom, #2c5364, #182c33, #0c1d24);
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  body,
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  body,
+  html {
+    font-size: 6px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #ccd6f6;
+}
+
+a:hover {
+  color: #62f9d6;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+/*# sourceMappingURL=preset.css.map */

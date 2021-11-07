@@ -1,0 +1,468 @@
+@import '../_minxin.scss';
+.profolio {
+	position: relative;
+	z-index: 0;
+	background: #2c5263;
+	min-height: 100vh;
+	&__header {
+		width: 100%;
+		position: fixed;
+		z-index: 999;
+		display: flex;
+	}
+	&__icon {
+		padding-top: 10px;
+		color: #ccd6f6;
+		width: 40%;
+		text-align: center;
+	}
+	&__nav {
+		padding-top: 10px;
+		display: flex;
+		color: #ccd6f6;
+		width: 60%;
+		letter-spacing: 0.03em;
+		justify-content: space-between;
+		@include BigPhone {
+			display: none;
+		}
+		> li {
+			span {
+				color: #62f9d6;
+			}
+			cursor: pointer;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		:nth-child(5) {
+			width: 25px;
+			height: 25px;
+		}
+		:nth-child(6) {
+			width: 25px;
+			height: 25px;
+			padding-right: 15%;
+			text-align: left;
+		}
+	}
+	&__closesub {
+		color: #ccd6f6;
+	}
+	&__submenu {
+		position: absolute;
+		right: 30px;
+		padding-top: 10px;
+		width: 30px;
+		height: 30px;
+		display: none;
+		@include BigPhone {
+			display: block;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&__mobilenavwrapper {
+		z-index: 9999;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		position: fixed;
+		display: none;
+	}
+	&__shadow {
+		background-color: black;
+		width: 100%;
+		height: 100%;
+		opacity: 0.7;
+		position: relative;
+		position: absolute;
+	}
+	&__mobilenav {
+		position: absolute;
+
+		bottom: 30px;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		font-size: 3rem;
+		text-align: right;
+		> li {
+			letter-spacing: 0.5rem;
+			padding: 30px;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		&__iconsets {
+			display: flex;
+			margin-left: 150px;
+			> li {
+				margin-right: 30px;
+				width: 80px;
+				height: 80px;
+				@include SmallPhone {
+					width: 40px;
+					height: 40px;
+				}
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+	&__body {
+		background: #0f2027;
+		background: linear-gradient(to bottom, #2c5364, #182c33, #0c1d24);
+		width: 100%;
+		// z-index: 99;
+		margin-top: 6%;
+		position: absolute;
+		display: flex;
+	}
+	&__linear {
+		position: fixed;
+		height: 90vh;
+		background-image: linear-gradient(to bottom, #a2b1ad, #62f9d6 100%);
+		left: 15%;
+		top: 200px;
+		width: 3px;
+		@include BigPhone {
+			display: none;
+		}
+	}
+
+	&__content {
+		margin-left: 20%;
+		z-index: 2;
+		@include BigPhone {
+			margin-left: 5%;
+		}
+	}
+	&__intro {
+		&[data-scroll='in'] {
+			.profolio__moon {
+				animation: bounceIn;
+				animation-duration: 2s;
+			}
+		}
+		&[data-scroll='out'] {
+			.profolio__moon {
+				animation: zoomOut;
+				animation-duration: 1s;
+				animation-fill-mode: forwards;
+			}
+		}
+		width: 100%;
+		padding: 200px 0 0 0;
+		display: flex;
+		flex-direction: column;
+		letter-spacing: 0.05rem;
+		min-height: 100vh;
+		:nth-child(1) {
+			color: #62f9d6;
+			font-size: 1rem;
+			letter-spacing: 0.08em;
+			font-weight: 600;
+			font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+		}
+		:nth-child(2) {
+			margin-top: 5px;
+			color: #ccd6f6;
+			font-size: 3.5rem;
+			letter-spacing: 0.08em;
+			padding-bottom: 10px;
+			opacity: 0;
+			animation: titleShows 1s 0.5s linear forwards;
+		}
+		:nth-child(3) {
+			color: #8892b0;
+			font-size: 3.5em;
+			letter-spacing: 0.08em;
+			padding-bottom: 10px;
+			opacity: 0;
+			animation: titleShows 1s 1s linear forwards;
+		}
+		:nth-child(4) {
+			padding-top: 10px;
+			color: #8892b0;
+			max-width: 400px;
+			opacity: 0;
+			animation: titleShows 1.5s 1.5s linear forwards;
+		}
+		:nth-child(5) {
+			cursor: pointer;
+			margin-top: 60px;
+			width: 100px;
+			padding: 15px;
+			border: 1px solid #62f9d6;
+			opacity: 0;
+			animation: titleShows 1.5s 1.5s linear forwards;
+			transition: all 1s;
+			img {
+				width: 100%;
+			}
+			&:hover {
+				transform: translateY(-10px);
+			}
+		}
+	}
+
+	&__works {
+		&[data-scroll='in'] {
+			.profolio__alient {
+				animation: backInDown;
+				animation-duration: 1s;
+				animation-fill-mode: forwards;
+				animation-delay: 1s;
+			}
+		}
+
+		padding-top: 350px;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		h1 {
+			color: #62f9d6;
+			font-size: 1.2em;
+			letter-spacing: 0.08em;
+			font-weight: 600;
+			font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+		}
+		:nth-child(2) {
+			margin-top: 10px;
+			color: #ccd6f6;
+			letter-spacing: 0.1em;
+			span {
+				margin-right: 10px;
+			}
+		}
+		&__respon {
+			letter-spacing: 0.1em;
+			margin-top: 20px;
+			color: #90939e;
+			&::before {
+				content: '▹';
+				color: #62f9d6;
+				margin-right: 10px;
+			}
+		}
+	}
+	&__projects {
+		padding-top: 200px;
+		min-height: 100vh;
+		&__skillset {
+			h2 {
+				color: #62f9d6;
+			}
+		}
+	}
+	&__skills {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 30px;
+
+		flex-direction: column;
+		span {
+			letter-spacing: 0.1em;
+			margin-top: 5px;
+			color: #90939e;
+			&::before {
+				content: '▹';
+				color: #62f9d6;
+				margin-right: 10px;
+			}
+		}
+	}
+	&__siteworks {
+		h2 {
+			color: #62f9d6;
+		}
+	}
+	&__sitework {
+		display: flex;
+		flex-wrap: wrap;
+		&__box {
+			position: relative;
+			cursor: pointer;
+			max-width: 300px;
+			min-height: 300px;
+			background-color: #203a43;
+			margin: 15px;
+			transition: all 0.5s;
+			padding: 30px;
+			box-sizing: border-box;
+			&:hover {
+				transform: translateY(-10px);
+			}
+			h4 {
+				color: #ccd6f6;
+			}
+		}
+		&__iconset {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__icon {
+			width: 40px;
+			height: 40px;
+			img {
+				width: 100%;
+			}
+		}
+		&__linkicon {
+			margin-top: 10px;
+			width: 15px;
+			height: 15px;
+			img {
+				width: 100%;
+			}
+		}
+		&__des {
+			width: 100%;
+			margin-top: 15px;
+			p {
+				margin-top: 15px;
+				color: #a8b2d1;
+				font-size: 0.9em;
+			}
+		}
+		&__tech {
+			position: absolute;
+			bottom: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			color: #76829f;
+			font-size: 0.2em;
+			justify-content: space-between;
+			width: 80%;
+		}
+	}
+	&__contact {
+		padding-top: 300px;
+		min-height: 100vh;
+		margin: 0 auto;
+
+		span {
+			display: block;
+		}
+		&__title {
+			text-align: center;
+			color: #62f9d6;
+			font-size: 1.2em;
+			letter-spacing: 0.08em;
+			font-weight: 600;
+			font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+		}
+		&__subtitle {
+			margin-top: 20px;
+			font-size: 2em;
+			text-align: center;
+			color: #ccd6f6;
+		}
+		&__des {
+			color: #8892b0;
+			max-width: 600px;
+			text-align: center;
+			margin: 20px auto 0 auto;
+			letter-spacing: 0.016em;
+		}
+		&__touch {
+			cursor: pointer;
+			text-align: center;
+			display: block;
+			background-color: transparent;
+			margin: 60px auto 0 auto;
+			max-width: 100px;
+			padding: 15px;
+			border-radius: 3px;
+			color: #62f9d6;
+			border: 1px solid #62f9d6;
+		}
+	}
+	//img
+	&__moon {
+		position: fixed;
+		right: 300px;
+		top: 150px;
+		width: 300px;
+		z-index: -1;
+		@include BigPhone {
+			width: 150px;
+			top: 600px;
+			right: 100px;
+		}
+	}
+	&__alient {
+		position: fixed;
+		top: 300px;
+		width: 300px;
+		left: 0;
+		z-index: -1;
+		transform: matrix3d(
+			-0.89466,
+			0,
+			0,
+			0,
+			0,
+			0.89466,
+			0,
+			0,
+			0,
+			0,
+			-1,
+			0,
+			0,
+			0,
+			0,
+			1
+		) !important;
+		opacity: 0;
+		@include BigPhone {
+			top: 600px;
+		}
+	}
+}
+
+@keyframes viewMoreHover {
+	25% {
+		border: 1px dotted #b5f0e2;
+	}
+	50% {
+		border: 1px dotted #9cf1de;
+	}
+	100% {
+		border: 1px solid #62f9d6;
+	}
+}
+
+@keyframes moonScale {
+	20% {
+		transform: scale(0.3);
+	}
+	50% {
+		transform: scale(0.7);
+	}
+	75% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0.8);
+	}
+}
+@keyframes titleShows {
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes showAlient {
+	100% {
+		opacity: 1;
+	}
+}
